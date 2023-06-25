@@ -18,9 +18,15 @@ git clone https://github.com/mAXxtor/NVI-Solutions-LLC-test.git
 cd NVI-Solutions-LLC-test
 ```
 Создать и активировать виртуальное окружение:
+Windows
 ```
 python -m venv venv
 source venv/Scripts/activate
+```
+MacOS
+```
+python3 -m venv venv
+source venv/bin/activate
 ```
 Установить зависимости:
 ```
