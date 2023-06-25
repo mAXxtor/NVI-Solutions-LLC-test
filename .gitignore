@@ -1,5 +1,8 @@
+# IDE files
+.vscode/
+
 # Media
-test_img/
+test_img/*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
