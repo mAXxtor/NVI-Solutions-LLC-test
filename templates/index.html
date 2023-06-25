@@ -1,28 +1,51 @@
 {% extends 'base.html' %}
+{% block title %}Solutions LLC Test form{% endblock %}
 
 {% block content %}
-  <h1>{% block title %} Solutions LLC Test {% endblock %}</h1>
-  <form method=post enctype=multipart/form-data>
-    <input type=file name=file accept='image/*'>
-    <input type=submit value='Загрузить картинку'>
-  </form><br>
-  {% if category %}
-    <table border='1'>
-      <tr>
-        <th>Редультат</th>
-      </tr>
-      <tr>
-        <td>Ширина</td>
-        <td>{{ width }}</td>
-      </tr>
-      <tr>
-        <td>Высота</td>
-        <td>{{ height }}</td>
-      </tr>
-      <tr>
-        <td>Результат</td>
-        <td>{{ category }}</td>
-      </tr>
-    </table>
-  {% endif %}
+<div class="row align-items-center" style="min-height: 20rem;">
+  <div class="col-8 offset-2">
+
+    <!-- Intro -->
+    <div class="py-5 text-center">
+      <h2>Solutions LLC Test form</h2>
+      <p class="lead">
+        Сервис распознования изображения, реализованный с помощью фреймворков Flask и Pytorch. Репозиторий проекта и документация по запуску проекта находится по адресу:
+        <br><a href="https://github.com/mAXxtor/NVI-Solutions-LLC-test" target="_blank">https://github.com/mAXxtor/NVI-Solutions-LLC-test</a>
+      </p>
+    </div>
+
+    <!-- Result table -->
+    {% if category %}
+    <div class="py-5 text-center">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Ширина, px</th>
+            <th scope="col">Высота, px</th>
+            <th scope="col">Категория</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ width }}</td>
+            <td>{{ height }}</td>
+            <td>{{ category }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    {% endif %}
+    
+    <!-- Form -->
+    <h4 class="mb-3">Форма загрузки изображения</h4>
+    <form method=post enctype=multipart/form-data>
+      <hr class="my-4">
+      <div>
+        <input class="form-control form-control-lg" id="formFileLg" type=file name=file accept='image/*' required>
+      </div>
+      <hr class="my-4">
+      <button class="w-100 btn btn-primary btn-lg" type="submit">Загрузить изображение</button>
+    </form>
+  </div>
+</div>
 {% endblock %}
