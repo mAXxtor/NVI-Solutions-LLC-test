@@ -16,7 +16,6 @@ git clone https://github.com/mAXxtor/NVI-Solutions-LLC-test.git
 Перейти в рабочую директорию:
 ```
 cd NVI-Solutions-LLC-test
-python -m venv venv
 ```
 Создать и активировать виртуальное окружение:
 ```
