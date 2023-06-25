@@ -18,9 +18,15 @@ git clone https://github.com/mAXxtor/NVI-Solutions-LLC-test.git
 cd NVI-Solutions-LLC-test
 ```
 Создать и активировать виртуальное окружение:
+Windows
 ```
 python -m venv venv
 source venv/Scripts/activate
+```
+MacOS
+```
+python3 -m venv venv
+source venv/bin/activate
 ```
 Установить зависимости:
 ```
@@ -32,6 +38,7 @@ flask run
 ```
 
 ## Использование приложения:
+![](https://github.com/mAXxtor/NVI-Solutions-LLC-test/useapp.gif.gif)
 После запуска приложения перейдите на страницу http://127.0.0.1:5000  
 Выберите и загрузите изображение (максимальный размер 16Mb)  
 На экране отобразится результат распознования изображения:
