@@ -1,5 +1,6 @@
 import os
 from flask import Flask, request, render_template
+from PIL import Image
 from torchvision.transforms.functional import get_image_size
 from torchvision.io import read_image, ImageReadMode
 from torchvision.models import ResNet50_Weights, resnet50
@@ -7,13 +8,13 @@ from werkzeug.utils import secure_filename
 # Папка для сохранения загруженных файлов
 UPLOAD_FOLDER = './test_img/'
 # Расширения файлов, которые разрешено загружать
-ALLOWED_EXTENSIONS = {'pdf', 'png', 'jpg', 'jpeg', 'gif'}
+ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
 
 app = Flask(__name__)
 app.config.from_object(__name__)
 app.secret_key = 'the random string'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-app.config['MAX_CONTENT_LENGTH'] = 16 * 1000 * 1000
+app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
 
 
 def allowed_file(filename):
