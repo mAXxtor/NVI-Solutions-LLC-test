@@ -38,7 +38,7 @@ flask run
 ```
 
 ## Использование приложения:
-![](https://github.com/mAXxtor/NVI-Solutions-LLC-test/useapp.gif)
+![](https://github.com/mAXxtor/NVI-Solutions-LLC-test/blob/main/useapp.gif)
 После запуска приложения перейдите на страницу http://127.0.0.1:5000  
 Выберите и загрузите изображение (максимальный размер 16Mb)  
 На экране отобразится результат распознования изображения:
