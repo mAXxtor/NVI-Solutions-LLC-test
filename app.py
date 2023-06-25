@@ -1,6 +1,6 @@
 import os
+from dotenv import load_dotenv
 from flask import Flask, request, render_template
-from PIL import Image
 from torchvision.transforms.functional import get_image_size
 from torchvision.io import read_image, ImageReadMode
 from torchvision.models import ResNet50_Weights, resnet50
@@ -10,9 +10,13 @@ UPLOAD_FOLDER = './test_img/'
 # Расширения файлов, которые разрешено загружать
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
 
+load_dotenv()
+
 app = Flask(__name__)
 app.config.from_object(__name__)
-app.secret_key = 'the random string'
+app.secret_key = os.getenv(
+    'SECRET_KEY',
+    default='zr!=t*+74yz_551vbo$mu05+#4kh$+wdfvhywwkoowxy+nql)c')
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
 
