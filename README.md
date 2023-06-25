@@ -18,12 +18,12 @@ git clone https://github.com/mAXxtor/NVI-Solutions-LLC-test.git
 cd NVI-Solutions-LLC-test
 ```
 Создайте и активируйте виртуальное окружение:  
-***- Windows ***
+***- Windows***
 ```
 python -m venv venv
 source venv/Scripts/activate
 ```
-***- MacOS ***
+***- MacOS***
 ```
 python3 -m venv venv
 source venv/bin/activate
