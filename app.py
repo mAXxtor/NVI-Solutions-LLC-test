@@ -1,7 +1,7 @@
 import os
 from flask import Flask, request, render_template
 from torchvision.transforms.functional import get_image_size
-from torchvision.io import read_image
+from torchvision.io import read_image, ImageReadMode
 from torchvision.models import ResNet50_Weights, resnet50
 from werkzeug.utils import secure_filename
 # Папка для сохранения загруженных файлов
@@ -29,7 +29,7 @@ def index():
         if file and allowed_file(file.filename):
             file.save(os.path.join(app.config['UPLOAD_FOLDER'],
                       secure_filename(file.filename)))
-        img = read_image(f'test_img/{file.filename}')
+        img = read_image(f'test_img/{file.filename}', mode=ImageReadMode.RGB)
         width, height = get_image_size(img)
 
         # Step 1: Initialize model with the best available weights
