@@ -9,30 +9,30 @@
 
 
 ## Запуск приложения:
-Клонировать репозиторий на локальный пк:
+Склонируйте репозиторий проекта в рабочую директорию на локальный ПК:
 ```
 git clone https://github.com/mAXxtor/NVI-Solutions-LLC-test.git
 ```
-Перейти в рабочую директорию:
+Перейдите в директорию с проектом:
 ```
 cd NVI-Solutions-LLC-test
 ```
-Создать и активировать виртуальное окружение:
-Windows
+Создайте и активируйте виртуальное окружение:  
+***- Windows ***
 ```
 python -m venv venv
 source venv/Scripts/activate
 ```
-MacOS
+***- MacOS ***
 ```
 python3 -m venv venv
 source venv/bin/activate
 ```
-Установить зависимости:
+Установите зависимости для работы приложения:
 ```
 pip install -r requirements.txt
 ```
-Запустить приложение:
+Запустите веб-приложение:
 ```
 flask run
 ```
