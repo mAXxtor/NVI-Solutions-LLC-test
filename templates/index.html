@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>{% block title %} Solutions LLC Test {% endblock %}</h1>
+  <form method=post enctype=multipart/form-data>
+    <input type=file name=file accept='image/*'>
+    <input type=submit value='Загрузить картинку'>
+  </form><br>
+  {% if category %}
+    <table border='1'>
+      <tr>
+        <th>Редультат</th>
+      </tr>
+      <tr>
+        <td>Ширина</td>
+        <td>{{ width }}</td>
+      </tr>
+      <tr>
+        <td>Высота</td>
+        <td>{{ height }}</td>
+      </tr>
+      <tr>
+        <td>Результат</td>
+        <td>{{ category }}</td>
+      </tr>
+    </table>
+  {% endif %}
+{% endblock %}
