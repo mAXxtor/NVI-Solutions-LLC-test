@@ -8,7 +8,36 @@
 [![TorchVision](https://img.shields.io/badge/TorchVision-0.15.2-green)](https://pytorch.org/vision/stable/index.html)
 
 
-## Запуск приложения:
+## Запуск приложения в Docker контейнере:
+Авторизуйтесь в терминале на Docker Hub:
+***- Windows***
+```
+docker login --username <username>
+```
+***- MacOS***
+```
+sudo docker login --username <username>
+```
+Загрузите образ проекта с Docker Hub:
+***- Windows***
+```
+docker pull maxxtor/nvi_solutions_llc_test:v0.1
+```
+***- MacOS***
+```
+sudo docker pull maxxtor/nvi_solutions_llc_test:v0.1
+```
+Запустите контейнер:
+***- Windows***
+```
+docker run -p 5000:5000 -d maxxtor/nvi_solutions_llc_test:v0.1
+```
+***- MacOS***
+```
+sudo docker run -p 5000:5000 -d maxxtor/nvi_solutions_llc_test:v0.1
+```
+
+## Запуск приложения локально:
 Склонируйте репозиторий проекта в рабочую директорию на локальный ПК:
 ```
 git clone https://github.com/mAXxtor/NVI-Solutions-LLC-test.git
@@ -39,8 +68,8 @@ flask run
 
 ## Использование приложения:
 ![](https://github.com/mAXxtor/NVI-Solutions-LLC-test/blob/main/useapp.gif)
-После запуска приложения перейдите на страницу http://127.0.0.1:5000  
-Выберите и загрузите изображение (максимальный размер 16Mb)  
+После запуска приложения перейдите на страницу http://127.0.0.1:5000 или http://localhost:5000 (если запустили в Docker контейнере)  
+Выберите и загрузите изображение (максимальный размер 16Mb, расширения *.png, *.jpg, *.jpeg)  
 На экране отобразится результат распознования изображения:
 - Ширина изображения в px
 - Высота изображения в px
