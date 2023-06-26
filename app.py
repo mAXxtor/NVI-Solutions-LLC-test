@@ -1,9 +1,9 @@
 import os
 from dotenv import load_dotenv
 from flask import Flask, request, render_template
-from torchvision.transforms.functional import get_image_size
 from torchvision.io import read_image, ImageReadMode
 from torchvision.models import ResNet50_Weights, resnet50
+from torchvision.transforms.functional import get_image_size
 from werkzeug.utils import secure_filename
 UPLOAD_FOLDER = './test_img/'
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
@@ -53,3 +53,7 @@ def index():
 
         pic_data = dict(category=category_name, width=width, height=height)
     return render_template('index.html', **pic_data)
+
+
+if __name__ == "__main__":
+    app.run(debug=True, host='0.0.0.0')
